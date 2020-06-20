@@ -9,9 +9,15 @@ public class FillValueItems implements FillItems{
 
     ItemsRepository repository;
     
-    FillValueItems(ItemsRepository repository){
+    private FillValueItems(ItemsRepository repository){
 
         this.repository = repository;
+
+    }
+
+    public static FillValueItems createFillValueItems(ItemsRepository repository){
+
+        return new FillValueItems(repository);
 
     }
 

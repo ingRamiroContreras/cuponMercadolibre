@@ -29,7 +29,7 @@ public class FillValueItemsTest {
         items.add("MLA4");
 
         ItemsRepository mercalodibreItemsRepository = new InMemoryItemsRepository();
-        FillValueItems fillValueItems =  new FillValueItems(mercalodibreItemsRepository);
+        FillValueItems fillValueItems =  FillValueItems.createFillValueItems(mercalodibreItemsRepository);
 
         /**
          * Excecute Test
@@ -57,7 +57,7 @@ public class FillValueItemsTest {
         items.add("MLA811601012");
 
         ItemsRepository mercalodibreItemsRepository = new MercadoLibreItemsRepository();
-        FillItems fillValueItems =  new FillValueItems(mercalodibreItemsRepository);
+        FillItems fillValueItems =  FillValueItems.createFillValueItems(mercalodibreItemsRepository);
 
         /**
          * Excecute Test
