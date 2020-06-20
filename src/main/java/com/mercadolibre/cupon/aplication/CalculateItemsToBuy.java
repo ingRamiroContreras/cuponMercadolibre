@@ -1,13 +1,22 @@
-package com.mercadolibre.cupon.domain;
+package com.mercadolibre.cupon.aplication;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.StringTokenizer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.stream.Collectors;
+
+import com.mercadolibre.cupon.domain.CouponValidator;
+import com.mercadolibre.cupon.domain.Item;
+import com.mercadolibre.cupon.domain.PurchaseItems;
 
 public class CalculateItemsToBuy {
 
+    Logger logger = Logger.getLogger(CalculateItemsToBuy.class.getName());
+
     PurchaseItems purchaseItems;
+    CouponValidator couponValidator;
 
     CalculateItemsToBuy(PurchaseItems purchaseItems) {
         this.purchaseItems = purchaseItems;
@@ -15,8 +24,23 @@ public class CalculateItemsToBuy {
 
     public List<String> calculate(Map<String, Float> items, Float coupon) {
 
-        if (!failValueCoupon(coupon))
+        this.couponValidator = CouponValidator.createCouponvalidator(items, coupon);
+
+        if (this.couponValidator.failValueCoupon()){
+            logger.log(Level.WARNING, "fail value coupon");
             return new ArrayList<>();
+        }
+
+        if (this.couponValidator.CouponGreaterThanItems()){
+
+            logger.log(Level.INFO, "coupon Greather than items values"); 
+
+            return items.entrySet()
+                        .stream()
+                        .map(e -> e.getKey())
+                        .collect(Collectors.toList());
+        }
+            
 
         Item[] itemsToEvaluate = processItems(items);
 
@@ -33,18 +57,6 @@ public class CalculateItemsToBuy {
             indexItem = indexItem + 1;
         }
         return itemsToEvaluate;
-    }
-
-    private boolean failValueCoupon(Float coupon) {
-
-        String digits = String.valueOf(coupon);
-        StringTokenizer tokens = new StringTokenizer(digits, ".");
-
-        String numbers = tokens.nextToken();
-        String decimals = tokens.nextToken();
-
-        return (decimals.length() <= 2);
-
     }
 
 }

@@ -61,7 +61,6 @@ public class PurchaseItemsCouponMercadoLibre implements PurchaseItems {
                     if (purchaseBase.getValueCoupon() >= purchaseBase.getValue() + items[i].getValue()) {
                         purchaseBase.addItem(items[i]);
                         generateBestPurchase(purchaseBase, bestOptionPurchase, items, false);
-                        System.out.println(purchaseBase);
                         purchaseBase.deleteItem(items[i]);
                     } else {
                         generateBestPurchase(purchaseBase, bestOptionPurchase, items, true);

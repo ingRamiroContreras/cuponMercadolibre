@@ -21,8 +21,8 @@ public class Purchase {
        return value;
     }
      
-    public void setValue(int peso) {
-        this.value = peso;
+    public void setValue(int value) {
+        this.value = value;
     }
  
 
@@ -75,7 +75,7 @@ public class Purchase {
                 cadena+=items[i]+"\n";
             }
         }
-        cadena+="Peso: " + getValue()+"\n";
+        cadena+="Value: " + getValue()+"\n";
         return cadena;
     }
 
@@ -83,8 +83,8 @@ public class Purchase {
         return valueCoupon;
     }
 
-    public void setValueCoupon(Float valorCupon) {
-        this.valueCoupon = valorCupon;
+    public void setValueCoupon(Float valueCoupon) {
+        this.valueCoupon = valueCoupon;
     }
 
     public void setItems(Item[] items) {
