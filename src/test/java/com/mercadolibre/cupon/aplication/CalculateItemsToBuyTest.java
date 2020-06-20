@@ -39,7 +39,7 @@ public class CalculateItemsToBuyTest {
          * Excecute Test
          */
         PurchaseItemsCouponMercadoLibre  purchase = new PurchaseItemsCouponMercadoLibre();
-        CalculateItemsToBuy calculateItemsToBuy = new CalculateItemsToBuy(purchase);
+        CalculateItemsToBuy calculateItemsToBuy = CalculateItemsToBuy.createCalculateItemsToBuy(purchase);
         List<String> result = calculateItemsToBuy.calculate(items, coupon);
         Collections.sort(result);
 
@@ -71,7 +71,7 @@ public class CalculateItemsToBuyTest {
          * Excecute Test
          */
         PurchaseItemsCouponMercadoLibre  purchase = new PurchaseItemsCouponMercadoLibre();
-        CalculateItemsToBuy calculateItemsToBuy = new CalculateItemsToBuy(purchase);
+        CalculateItemsToBuy calculateItemsToBuy = CalculateItemsToBuy.createCalculateItemsToBuy(purchase);;
         List<String> result = calculateItemsToBuy.calculate(items, coupon);
         
         /**
@@ -100,7 +100,7 @@ public class CalculateItemsToBuyTest {
          * Excecute Test
          */
         PurchaseItemsCouponMercadoLibre  purchase = new PurchaseItemsCouponMercadoLibre();
-        CalculateItemsToBuy calculateItemsToBuy = new CalculateItemsToBuy(purchase);
+        CalculateItemsToBuy calculateItemsToBuy = CalculateItemsToBuy.createCalculateItemsToBuy(purchase);;
         List<String> result = calculateItemsToBuy.calculate(items, coupon);
         Collections.sort(result);
 
@@ -125,7 +125,7 @@ public class CalculateItemsToBuyTest {
 
         Float coupon = 10F;
         PurchaseItemsCouponMercadoLibre  purchase = new PurchaseItemsCouponMercadoLibre();
-        CalculateItemsToBuy calculateItemsToBuy = new CalculateItemsToBuy(purchase);
+        CalculateItemsToBuy calculateItemsToBuy = CalculateItemsToBuy.createCalculateItemsToBuy(purchase);;
 
         /**
          * Excecute Test

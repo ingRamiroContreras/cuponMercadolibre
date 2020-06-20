@@ -18,9 +18,15 @@ public class CalculateItemsToBuy implements CalculateItems{
     PurchaseItems purchaseItems;
     CouponValidator couponValidator;
 
-    CalculateItemsToBuy(PurchaseItems purchaseItems) {
+    private CalculateItemsToBuy(PurchaseItems purchaseItems) {
         this.purchaseItems = purchaseItems;
     }
+
+    public static CalculateItemsToBuy createCalculateItemsToBuy(PurchaseItems purchaseItems){
+
+        return new CalculateItemsToBuy(purchaseItems);
+    }
+
     @Override
     public List<String> calculate(Map<String, Float> items, Float coupon) {
 
