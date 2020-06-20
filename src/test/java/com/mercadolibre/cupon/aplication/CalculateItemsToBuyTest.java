@@ -124,12 +124,12 @@ public class CalculateItemsToBuyTest {
         items.put("MLA4", 80F);
 
         Float coupon = 10F;
+        PurchaseItemsCouponMercadoLibre  purchase = new PurchaseItemsCouponMercadoLibre();
+        CalculateItemsToBuy calculateItemsToBuy = new CalculateItemsToBuy(purchase);
 
         /**
          * Excecute Test
          */
-        PurchaseItemsCouponMercadoLibre  purchase = new PurchaseItemsCouponMercadoLibre();
-        CalculateItemsToBuy calculateItemsToBuy = new CalculateItemsToBuy(purchase);
         List<String> result = calculateItemsToBuy.calculate(items, coupon);
         
         /**
