@@ -11,7 +11,7 @@ import com.mercadolibre.cupon.domain.CouponValidator;
 import com.mercadolibre.cupon.domain.Item;
 import com.mercadolibre.cupon.domain.PurchaseItems;
 
-public class CalculateItemsToBuy {
+public class CalculateItemsToBuy implements CalculateItems{
 
     Logger logger = Logger.getLogger(CalculateItemsToBuy.class.getName());
 
@@ -21,7 +21,7 @@ public class CalculateItemsToBuy {
     CalculateItemsToBuy(PurchaseItems purchaseItems) {
         this.purchaseItems = purchaseItems;
     }
-
+    @Override
     public List<String> calculate(Map<String, Float> items, Float coupon) {
 
         this.couponValidator = CouponValidator.createCouponvalidator(items, coupon);

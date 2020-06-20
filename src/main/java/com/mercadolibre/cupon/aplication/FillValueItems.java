@@ -5,7 +5,7 @@ import java.util.Map;
 
 import com.mercadolibre.cupon.domain.ItemsRepository;
 
-public class FillValueItems {
+public class FillValueItems implements FillItems{
 
     ItemsRepository repository;
     
@@ -15,7 +15,8 @@ public class FillValueItems {
 
     }
 
-    Map<String,Float> getValuesItem(List<String> itemsList){
+    @Override
+    public Map<String,Float> getValuesItem(List<String> itemsList){
 
         return this.repository.getValuesItem(itemsList);
         

@@ -3,7 +3,6 @@ package com.mercadolibre.cupon.aplication;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -58,7 +57,7 @@ public class FillValueItemsTest {
         items.add("MLA811601012");
 
         ItemsRepository mercalodibreItemsRepository = new MercadoLibreItemsRepository();
-        FillValueItems fillValueItems =  new FillValueItems(mercalodibreItemsRepository);
+        FillItems fillValueItems =  new FillValueItems(mercalodibreItemsRepository);
 
         /**
          * Excecute Test
@@ -69,8 +68,6 @@ public class FillValueItemsTest {
 
         assertNotNull(ItemsWithValues.get("MLA811601010"));
         assertNotNull(ItemsWithValues.get("MLA811601012"));
-        //assertNotNull(ItemsWithValues.get("MLA3"));
-        //assertNotNull(ItemsWithValues.get("MLA4"));
 
 
     }

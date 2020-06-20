@@ -12,6 +12,8 @@ import com.mercadolibre.cupon.domain.ItemsRepository;
 
 import org.springframework.web.client.RestTemplate;
 
+
+
 public class MercadoLibreItemsRepository implements ItemsRepository {
 
     @Override
@@ -35,7 +37,6 @@ public class MercadoLibreItemsRepository implements ItemsRepository {
             System.out.println(map);
             Map<String,Object> body = (Map<String,Object>) map.get("body");
             
-            //Map<String, String> mapperMap = mapperJsonResultToMap(body);
             Optional<Object> idItem = Optional.ofNullable(body.get("id"));
             Optional<Object> price = Optional.ofNullable(body.get("price"));
             
@@ -48,21 +49,6 @@ public class MercadoLibreItemsRepository implements ItemsRepository {
         return respMapper;
     }
 
-    private Map<String, String> mapperJsonResultToMap(String json) {
-
-        ObjectMapper mapper = new ObjectMapper();
-        Map<String, String> map = new HashMap<>();
-
-        try {
-            map = mapper.readValue(json, Map.class);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return map;
-
-    }
 
     private List<Map<String, Object>> mapperJsonResultToListMap(String json) {
         ObjectMapper mapper = new ObjectMapper();
