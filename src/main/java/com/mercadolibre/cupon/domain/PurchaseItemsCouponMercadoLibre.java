@@ -9,13 +9,17 @@ public class PurchaseItemsCouponMercadoLibre implements PurchaseItems {
     @Override
     public List<String> excecute(Float valueCoupon, Item[] items) {
 
-        List<String> bestOptionListItems = new ArrayList<>();
-
         Purchase purchaseBase = new Purchase(valueCoupon, items.length);
         Purchase bestOptionPurchase = new Purchase(valueCoupon, items.length);
+
         generateBestPurchase(purchaseBase, bestOptionPurchase, items, false);
 
-        System.out.println(bestOptionPurchase);
+        return ProcessResponse(bestOptionPurchase);
+    }
+
+    private List<String> ProcessResponse(Purchase bestOptionPurchase) {
+
+        List<String> bestOptionListItems = new ArrayList<>();
 
         for (int i = 0; i < bestOptionPurchase.getItems().length; i++) {
 

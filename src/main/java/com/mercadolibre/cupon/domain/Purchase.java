@@ -26,26 +26,19 @@ public class Purchase {
     }
  
 
- 
-    /**
-     * Añade un elemento a la mochila
-     * @param e 
-     */
     public void addItem(Item e) {
  
         for (int i = 0; i < this.items.length; i++) {
             if (this.items[i] == null) {
-                this.items[i] = e; //lo añade
-                this.value+=e.getValue(); // Aumenta el piso
+                this.items[i] = e; 
+                this.value+=e.getValue(); 
                 break;
             }
         }
  
     }
  
-    /**
-     * Vaciamos la mochila
-     */
+ 
     public void clear() {
         this.value=0;
         for (int i = 0; i < this.items.length; i++) {
@@ -53,25 +46,18 @@ public class Purchase {
         }
     }
  
-    /**
-     * Elimina elemento dado
-     * @param e 
-     */
+   
     public void deleteItem(Item e) {
         for (int i = 0; i < this.items.length; i++) {
             if (this.items[i].equals(e)) {
-                this.items[i] = null; //el elemento fuera
-                this.value-=e.getValue(); //Reduce el peso
+                this.items[i] = null; 
+                this.value-=e.getValue();
                 break;
             }
         }
     }
      
-    /**
-     * Indica si existe un elemento
-     * @param e
-     * @return 
-     */
+   
     public boolean existItem(Item e) {
         for (int i = 0; i < this.items.length; i++) {
             if (this.items[i] != null && this.items[i].equals(e)) {
@@ -81,10 +67,7 @@ public class Purchase {
         return false;
     }
  
-    /**
-     * Muestra la mochila
-     * @return 
-     */
+  
     public String toString() {
         String cadena="";
         for (int i = 0; i < this.items.length; i++) {

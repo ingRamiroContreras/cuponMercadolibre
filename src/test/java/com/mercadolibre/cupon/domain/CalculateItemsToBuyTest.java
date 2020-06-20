@@ -6,6 +6,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,6 +39,7 @@ public class CalculateItemsToBuyTest {
         PurchaseItemsCouponMercadoLibre  purchase = new PurchaseItemsCouponMercadoLibre();
         CalculateItemsToBuy calculateItemsToBuy = new CalculateItemsToBuy(purchase);
         List<String> result = calculateItemsToBuy.calculate(items, coupon);
+        Collections.sort(result);
 
         /**
          * Validate Test
