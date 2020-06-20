@@ -22,11 +22,11 @@ public class CalculateItemsToBuyTest {
          */
 
         Map<String, Float> items = new HashMap<>();
-        items.put("MLA1", 10F);
-        items.put("MLA2", 10F);
-        items.put("MLA3", 10F);
-        items.put("MLA4", 10F);
-        items.put("MLA5", 10F);
+        items.put("MLA1", 100F);
+        items.put("MLA2", 210F);
+        items.put("MLA3", 260F);
+        items.put("MLA4", 80F);
+        items.put("MLA5", 90F);
 
         Float coupon = 500F;
 
@@ -35,8 +35,8 @@ public class CalculateItemsToBuyTest {
         /**
          * Excecute Test
          */
-
-        CalculateItemsToBuy calculateItemsToBuy = new CalculateItemsToBuy();
+        PurchaseItemsCouponMercadoLibre  purchase = new PurchaseItemsCouponMercadoLibre();
+        CalculateItemsToBuy calculateItemsToBuy = new CalculateItemsToBuy(purchase);
         List<String> result = calculateItemsToBuy.calculate(items, coupon);
 
         /**
@@ -66,8 +66,8 @@ public class CalculateItemsToBuyTest {
         /**
          * Excecute Test
          */
-
-        CalculateItemsToBuy calculateItemsToBuy = new CalculateItemsToBuy();
+        PurchaseItemsCouponMercadoLibre  purchase = new PurchaseItemsCouponMercadoLibre();
+        CalculateItemsToBuy calculateItemsToBuy = new CalculateItemsToBuy(purchase);
         List<String> result = calculateItemsToBuy.calculate(items, coupon);
         
         /**
