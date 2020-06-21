@@ -4,13 +4,13 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class ItemsBuyDto {
+public class ItemsBuyRequestDto {
     
     @JsonProperty("item_ids")
     private List<String> itemIds;
 
-    @JsonProperty("total")
-    private Float total;
+    @JsonProperty("amount")
+    private Float amount;
 
     public List<String> getItemIds() {
         return itemIds;
@@ -20,13 +20,15 @@ public class ItemsBuyDto {
         this.itemIds = itemIds;
     }
 
-    public Float getTotal() {
-        return total;
+    public Float getAmount() {
+        return amount;
     }
 
-    public void setTotal(Float total) {
-        this.total = total;
+    public void setAmount(Float amount) {
+        this.amount = amount;
     }
+
+    
 
     
 }
