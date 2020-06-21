@@ -44,6 +44,40 @@ Body =
 }
 
 ```
+## Consumo servicios Heroku
+
+Request
+
+```json
+Method = POST
+Url = https://heroku-mercadolibre.herokuapp.com/coupon
+Content-Type = application/json
+Body = 
+{
+    "item_ids": [
+        "MLA811601010",
+        "MLA811601012"
+    ],
+    "amount": 500000
+}
+```
+
+Response
+
+```json
+Method = POST
+Content-Type = application/json
+Body = 
+{
+    "item_ids": [
+        "MLA811601010",
+        "MLA811601012"
+    ],
+    "total": 497499.0
+}
+
+```
+
 
 ## Proyecto realizado en JAVA y Spring Boot
 
