@@ -34,7 +34,6 @@ public class MercadoLibreItemsRepository implements ItemsRepository {
         Map<String, Float> respMapper = new HashMap<>();
 
         for (Map<String, Object> map : response) {
-            System.out.println(map);
             Map<String,Object> body = (Map<String,Object>) map.get("body");
             
             Optional<Object> idItem = Optional.ofNullable(body.get("id"));

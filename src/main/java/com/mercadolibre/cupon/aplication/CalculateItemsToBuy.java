@@ -58,7 +58,7 @@ public class CalculateItemsToBuy implements CalculateItems{
         int indexItem = 0;
 
         for (Map.Entry<String, Float> entry : items.entrySet()) {
-            System.out.println(entry.getKey() + ":" + entry.getValue());
+            //System.out.println(entry.getKey() + ":" + entry.getValue());
             itemsToEvaluate[indexItem] = Item.createItem(entry.getValue(), entry.getKey());
             indexItem = indexItem + 1;
         }
