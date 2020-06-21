@@ -1,12 +1,12 @@
-package com.mercadolibre.cupon.service;
+package com.mercadolibre.cupon.app.service;
 
 import java.util.List;
 import java.util.Map;
 
-import com.mercadolibre.cupon.DTO.ItemsBuyRequestDto;
-import com.mercadolibre.cupon.DTO.ItemsBuyResponseDto;
 import com.mercadolibre.cupon.aplication.CalculateItems;
 import com.mercadolibre.cupon.aplication.FillItems;
+import com.mercadolibre.cupon.app.DTO.ItemsBuyRequestDto;
+import com.mercadolibre.cupon.app.DTO.ItemsBuyResponseDto;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

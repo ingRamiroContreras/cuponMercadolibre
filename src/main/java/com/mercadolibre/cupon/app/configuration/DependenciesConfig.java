@@ -1,4 +1,4 @@
-package com.mercadolibre.cupon.configuration;
+package com.mercadolibre.cupon.app.configuration;
 
 import com.mercadolibre.cupon.aplication.CalculateItems;
 import com.mercadolibre.cupon.aplication.CalculateItemsToBuy;

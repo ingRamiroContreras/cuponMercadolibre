@@ -1,4 +1,4 @@
-package com.mercadolibre.cupon.controller;
+package com.mercadolibre.cupon.app.controller;
 
 import java.util.HashMap;
 

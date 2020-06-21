@@ -1,4 +1,4 @@
-package com.mercadolibre.cupon.DTO;
+package com.mercadolibre.cupon.app.DTO;
 
 import java.util.List;
 
