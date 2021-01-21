@@ -20,6 +20,9 @@ mvn clean Install
 
 Ejecutar JAR
 
+Primero ubicarse en la ruta <ruta donde se descargo el proyecto> + /mercado-libre/cupon/target
+    
+despues ejecutar:
 ```bash
 java -jar cupon-0.0.1-SNAPSHOT.jar
 ```
