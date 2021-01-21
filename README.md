@@ -5,6 +5,19 @@ calculate cupon from MercadoLibre
 
 Descargar archivo test-0.0.1-SNAPSHOT.jar  ubicado en la carpeta [jar].
 
+
+Ejecutar casos de prueba 
+
+```bash
+mvn clean test
+```
+
+Generar JAR
+
+```bash
+mvn clean Install
+```
+
 Ejecutar JAR
 
 ```bash
