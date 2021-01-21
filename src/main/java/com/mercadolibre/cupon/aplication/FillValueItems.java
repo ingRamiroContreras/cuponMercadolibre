@@ -3,19 +3,19 @@ package com.mercadolibre.cupon.aplication;
 import java.util.List;
 import java.util.Map;
 
-import com.mercadolibre.cupon.domain.ItemsRepository;
+import com.mercadolibre.cupon.domain.ItemsService;
 
 public class FillValueItems implements FillItems{
 
-    ItemsRepository repository;
+    ItemsService repository;
     
-    private FillValueItems(ItemsRepository repository){
+    private FillValueItems(ItemsService repository){
 
         this.repository = repository;
 
     }
 
-    public static FillValueItems createFillValueItems(ItemsRepository repository){
+    public static FillValueItems createFillValueItems(ItemsService repository){
 
         return new FillValueItems(repository);
 

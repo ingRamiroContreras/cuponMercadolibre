@@ -44,6 +44,16 @@ Body =
 }
 
 ```
+
+Limpiar cache
+
+```json
+Method = POST
+Url = http://localhost:8080/cache/coupon
+Content-Type = application/json
+
+```
+
 ## Consumo servicios Heroku
 
 Request
@@ -75,6 +85,15 @@ Body =
     ],
     "total": 497499.0
 }
+
+```
+
+Limpiar cache
+
+```json
+Method = POST
+Url = https://heroku-mercadolibre.herokuapp.com/cache/coupon
+Content-Type = application/json
 
 ```
 

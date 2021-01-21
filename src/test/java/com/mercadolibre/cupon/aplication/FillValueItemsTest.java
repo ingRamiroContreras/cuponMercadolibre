@@ -6,9 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import com.mercadolibre.cupon.domain.ItemsRepository;
+import com.mercadolibre.cupon.domain.ItemsService;
 import com.mercadolibre.cupon.infraestructure.InMemoryItemsRepository;
-import com.mercadolibre.cupon.infraestructure.MercadoLibreItemsRepository;
+import com.mercadolibre.cupon.infraestructure.MercadoLibreItems;
+import com.mercadolibre.cupon.infraestructure.SendMercadoLIbreRequest;
 
 import org.junit.jupiter.api.Test;
 
@@ -28,7 +29,7 @@ public class FillValueItemsTest {
         items.add("MLA3");
         items.add("MLA4");
 
-        ItemsRepository mercalodibreItemsRepository = new InMemoryItemsRepository();
+        ItemsService mercalodibreItemsRepository = new InMemoryItemsRepository();
         FillItems fillValueItems =  FillValueItems.createFillValueItems(mercalodibreItemsRepository);
 
         /**
@@ -54,9 +55,9 @@ public class FillValueItemsTest {
 
         List<String> items = new ArrayList<>();
         items.add("MLA811601010");
-        items.add("MLA811601012");
+        items.add("MLA811601014");
 
-        ItemsRepository mercalodibreItemsRepository = new MercadoLibreItemsRepository();
+        ItemsService mercalodibreItemsRepository = new MercadoLibreItems(new SendMercadoLIbreRequest());
         FillItems fillValueItems =  FillValueItems.createFillValueItems(mercalodibreItemsRepository);
 
         /**
@@ -67,7 +68,7 @@ public class FillValueItemsTest {
 
 
         assertNotNull(ItemsWithValues.get("MLA811601010"));
-        assertNotNull(ItemsWithValues.get("MLA811601012"));
+        assertNotNull(ItemsWithValues.get("MLA811601014"));
 
 
     }

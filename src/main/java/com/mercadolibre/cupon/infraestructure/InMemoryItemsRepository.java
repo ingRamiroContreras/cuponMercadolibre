@@ -7,9 +7,9 @@ import java.util.Map;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-import com.mercadolibre.cupon.domain.ItemsRepository;
+import com.mercadolibre.cupon.domain.ItemsService;
 
-public class InMemoryItemsRepository implements ItemsRepository {
+public class InMemoryItemsRepository implements ItemsService {
 
     @Override
     public Map<String, Float> getValuesItem(List<String> itemsList) {

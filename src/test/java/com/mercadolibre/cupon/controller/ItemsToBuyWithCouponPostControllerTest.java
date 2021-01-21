@@ -28,7 +28,7 @@ public class ItemsToBuyWithCouponPostControllerTest {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
 
-        HttpEntity<String> request = new HttpEntity<String>("{ \"item_ids\": [ \"MLA811601010\", \"MLA811601012\" ], \"amount\": 500000 }", headers);
+        HttpEntity<String> request = new HttpEntity<String>("{ \"item_ids\": [ \"MLA811601010\", \"MLA811601014\" ], \"amount\": 500000 }", headers);
         
 		assertThat(this.restTemplate.postForObject("http://localhost:" + port + "/coupon", request,
 				String.class)).contains("MLA811601010");
